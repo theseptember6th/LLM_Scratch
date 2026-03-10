@@ -35,16 +35,26 @@ def predict_output(user_input: dict):
     #     validate_template=True,
     # )
     template = load_prompt("prompt/template.json")
-
     # fill the placeholders
-    prompt = template.format(
-        paper_input=user_input["paper_input"],
-        style_input=user_input["style_input"],
-        length_input=user_input["length_input"],
+    # prompt = template.format(
+    #     paper_input=user_input["paper_input"],
+    #     style_input=user_input["style_input"],
+    #     length_input=user_input["length_input"],
+    # )
+    # model = ChatHuggingFace(llm=llm)
+
+    # result = model.invoke(prompt)
+
+    # return {"output": result.content}
+
+    # using chain
+    chain = template | llm
+    result = chain.invoke(
+        {
+            "paper_input": user_input["paper_input"],
+            "style_input": user_input["style_input"],
+            "length_input": user_input["length_input"],
+        }
     )
 
-    model = ChatHuggingFace(llm=llm)
-
-    result = model.invoke(prompt)
-
-    return {"output": result.content}
+    return {"output": result}
