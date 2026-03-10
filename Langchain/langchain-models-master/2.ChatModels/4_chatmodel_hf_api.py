@@ -9,7 +9,7 @@ api_key = os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN")
 
 # Create LLM endpoint
 llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceTB/SmolLM3-3B",
+    repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     task="text-generation",
     huggingfacehub_api_token=api_key,
 )
