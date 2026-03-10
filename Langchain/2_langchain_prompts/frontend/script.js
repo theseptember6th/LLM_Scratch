@@ -4,7 +4,10 @@ const resultDiv = document.getElementById("result");
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
   const data = {
-    message: document.getElementById("user_input").value,
+    // message: document.getElementById("user_input").value,
+    paper_input: document.getElementById("papers").value,
+    style_input: document.getElementById("explaination_style").value,
+    length_input: document.getElementById("length").value,
   };
 
   try {

@@ -10,8 +10,28 @@
       <h1>Research Tool Helper</h1>
       <p>Enter your text below</p>
       <form id="predictionForm" method="POST">
-        <label for="user_input">Message:</label>
-        <input type="text" name="user_input" id="user_input">
+        <!-- <label for="user_input">Message:</label>
+        <input type="text" name="user_input" id="user_input"> -->
+        <label for="papers">Select Research Paper Name</label>
+        <select name="papers" id="papers">
+        <option value="Attention Is All You Need">Attention Is All You Need</option>
+        <option value="BERT: Pre-training of Deep Bidirectional Transformers">BERT: Pre-training of Deep Bidirectional Transformers</option>
+        <option value="GPT-3: Language Models are Few-Shot Learners">GPT-3: Language Models are Few-Shot Learners</option>
+        <option value="Diffusion Models Beat GANs on Image Synthesis">Diffusion Models Beat GANs on Image Synthesis</option>
+        </select>
+
+        <select name="explaination_style" id="explaination_style">
+        <option value="Beginner-Friendly">Beginner-Friendly</option>
+        <option value="Technical">Technical</option>
+        <option value="Code-Oriented">Code-Oriented</option>
+        <option value="Mathematical">Mathematical</option>
+        </select>
+
+        <select name="length" id="length">
+        <option value="Short (1-2 paragraphs)">Short (1-2 paragraphs)</option>
+        <option value="Medium (3-5 paragraphs)">Medium (3-5 paragraphs)</option>
+        <option value="Long (detailed explanation)">Long (detailed explanation)</option>
+        </select>
         <button type="submit">Summarize</button>
       </form>
         <div id="result"></div>
