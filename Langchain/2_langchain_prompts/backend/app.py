@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
-from schema import UserInput
+from schema import UserInput, PredictionResponse
 from model import predict_output
 
 
@@ -34,9 +34,14 @@ app.add_middleware(
 )
 
 
-@app.post("/summarize")
+@app.post("/summarize", response_model=PredictionResponse)
 def predict_premium(data: UserInput):
-    input = {"message": data.message}
+    input = {
+        # "message": data.message,
+        "paper_input": data.paper_input,
+        "style_input": data.style_input,
+        "length_input": data.length_input,
+    }
 
     try:
         prediction = predict_output(input)
