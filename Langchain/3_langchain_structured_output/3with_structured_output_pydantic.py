@@ -69,4 +69,5 @@ print(result)
 print(type(result))  # dict
 print(result.summary)
 print(result.sentiment)
+
 print(result.name)
