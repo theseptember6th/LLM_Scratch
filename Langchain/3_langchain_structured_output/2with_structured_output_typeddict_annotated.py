@@ -1,17 +1,28 @@
 import os
-from langchain_huggingface import HuggingFacePipeline, ChatHuggingFace
-from typing import TypedDict, Annotated, Optional, Literal
 
-os.environ["HF_HOME"] = "/Users/kristalshrestha/Documents/Code/LLM_Scratch/models"
-llm = HuggingFacePipeline.from_model_id(
-    model_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",  # use other model ,this model cant understand
-    task="text-generation",
-    pipeline_kwargs={
-        "max_new_tokens": 100,
-        "temperature": 0.5,
-    },
+# from langchain_huggingface import HuggingFacePipeline, ChatHuggingFace
+from typing import TypedDict, Annotated, Optional, Literal
+from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+from torch.cuda import temperature
+
+# os.environ["HF_HOME"] = "/Users/kristalshrestha/Documents/Code/LLM_Scratch/models"
+# llm = HuggingFacePipeline.from_model_id(
+#     model_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0",  # use other model ,this model cant understand
+#     task="text-generation",
+#     pipeline_kwargs={
+#         "max_new_tokens": 100,
+#         "temperature": 0.5,
+#     },
+# )
+# model = ChatHuggingFace(llm=llm)
+
+load_dotenv()
+model = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash-lite",
+    google_api_key=os.getenv("GOOGLE_API_KEY"),
+    temperature=0.5,
 )
-model = ChatHuggingFace(llm=llm)
 
 
 # schema
