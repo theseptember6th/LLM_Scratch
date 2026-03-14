@@ -1,13 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 
 # make tuples to make it work
-
-# chat_template = ChatPromptTemplate.from_messages(
-#     [
-#         ("system", "You are a helpful {domain} expert"),
-#         ("human", "Explain in simple terms,what is {topic}"),
-#     ]
-# )
 # this also work (recommended)
 chat_template = ChatPromptTemplate.from_messages(
     [
