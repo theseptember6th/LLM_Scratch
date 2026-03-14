@@ -1,19 +1,28 @@
 import os
-from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
+
+# from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from typing import TypedDict, Annotated, Optional, Literal
 from pydantic import BaseModel, Field
 
-# Ensure your .env has HUGGINGFACEHUB_API_TOKEN
-hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+# # Ensure your .env has HUGGINGFACEHUB_API_TOKEN
+# hf_token = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-# 1. Setup the Strategy/Endpoint
-llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",  # Zephyr is great for Chat
-    task="text-generation",
-    max_new_tokens=512,
-    huggingfacehub_api_token=hf_token,
+# # 1. Setup the Strategy/Endpoint
+# llm = HuggingFaceEndpoint(
+#     repo_id="HuggingFaceH4/zephyr-7b-beta",  # Zephyr is great for Chat
+#     task="text-generation",
+#     max_new_tokens=512,
+#     huggingfacehub_api_token=hf_token,
+# )
+# model = ChatHuggingFace(llm=llm)
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+
+load_dotenv()
+model = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash-lite", google_api_key=os.getenv("GOOGLE_API_KEY")
 )
-model = ChatHuggingFace(llm=llm)
 
 
 # schema
