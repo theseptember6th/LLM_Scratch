@@ -61,11 +61,23 @@ from langchain_core.runnables import (
 
 report_gen_chain = RunnableSequence(prompt1, model, parser)
 
+
+def is_long_text(text):
+    length = len(text.split())
+    if length > 500:
+        return True
+    else:
+        return False
+
+
 branch_chain = RunnableBranch(
     # (condition 1,run this chain1/runnable)
     # (condition2,run this chain2/runnable)
     # default condition
-    (lambda x: len(x.split()) > 500, RunnableSequence(prompt2, model, parser)),
+    # using lambda function
+    # (lambda x: len(x.split()) > 500, RunnableSequence(prompt2, model, parser)),
+    # using predefined true false regular function
+    (is_long_text, RunnableSequence(prompt2, model, parser)),
     RunnablePassthrough(),  # default
 )
 # merge chains/runnables
