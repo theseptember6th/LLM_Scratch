@@ -53,3 +53,7 @@ chain = prompt | model | parser
 result = chain.invoke({"topic": "Cricket"})
 
 print(result)
+
+
+# to visualize the chain
+chain.get_graph().print_ascii()
