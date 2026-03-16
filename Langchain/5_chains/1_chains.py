@@ -1,3 +1,7 @@
+# pip show langchain
+## this won't work because on newer version.In this version StructuredOutputParser was removed completely. That is why none of the old imports work. Also no data validation
+
+from ast import parse
 from langchain_core.prompts import PromptTemplate
 from langchain_huggingface import (
     ChatHuggingFace,
