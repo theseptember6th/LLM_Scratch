@@ -6,8 +6,8 @@ loader = PyPDFLoader(file_path=r"./1.1_dl_curriculum.pdf")
 
 docs = loader.load()
 
-splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0, separator="")
-
+splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=10, separator="")
+# for RAG based application,10% of chunksize for  chunk overlap is good.
 result = splitter.split_documents(docs)
 
 # print(result)
