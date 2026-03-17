@@ -41,5 +41,6 @@ splitter = RecursiveCharacterTextSplitter.from_language(
 chunks = splitter.split_text(text)
 
 
-print(len(chunks))
+print(len(chunks))  # 2
 print(chunks)
+"""Output:['# Project Name: Smart Student Tracker\n\nA simple Python-based project to manage and track student data, including their grades, age, and academic status.\n\n\n## Features\n\n- Add new students with relevant info\n- View student details\n- Check if a student is passing\n- Easily extendable class-based design', '## 🛠 Tech Stack\n\n- Python 3.10+\n- No external dependencies\n\n\n## Getting Started\n\n1. Clone the repo  \n   ```bash\n   git clone https://github.com/your-username/student-tracker.git']"""
