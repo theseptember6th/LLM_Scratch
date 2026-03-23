@@ -1,1 +1,30 @@
-[{"type": "HumanMessage", "content": "Hi"}, {"type": "AIMessage", "content": " Hello! I'm here to help answer any"}, {"type": "HumanMessage", "content": "who is modi"}, {"type": "AIMessage", "content": " Narendra Modi is a prominent Indian"}, {"type": "HumanMessage", "content": "how old he is"}, {"type": "AIMessage", "content": " Narendra Modi was born on September"}, {"type": "HumanMessage", "content": "exit"}]
+[
+  {
+    "type": "HumanMessage",
+    "content": "Hi"
+  },
+  {
+    "type": "AIMessage",
+    "content": " Hello! I'm here to help answer any"
+  },
+  {
+    "type": "HumanMessage",
+    "content": "who is modi"
+  },
+  {
+    "type": "AIMessage",
+    "content": " Narendra Modi is a prominent Indian"
+  },
+  {
+    "type": "HumanMessage",
+    "content": "how old he is"
+  },
+  {
+    "type": "AIMessage",
+    "content": " Narendra Modi was born on September"
+  },
+  {
+    "type": "HumanMessage",
+    "content": "exit"
+  }
+]
