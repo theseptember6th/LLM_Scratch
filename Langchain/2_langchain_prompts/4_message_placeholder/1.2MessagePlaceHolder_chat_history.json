@@ -1,0 +1,26 @@
+[
+  {
+    "type": "HumanMessage",
+    "content": "Hi"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Hello! I'm here to help."
+  },
+  {
+    "type": "HumanMessage",
+    "content": "Who is Narendra Modi?"
+  },
+  {
+    "type": "AIMessage",
+    "content": "Narendra Modi is the Prime Minister of India."
+  },
+  {
+    "type": "HumanMessage",
+    "content": "How old is he?"
+  },
+  {
+    "type": "AIMessage",
+    "content": "He was born on September 17, 1950."
+  }
+]
