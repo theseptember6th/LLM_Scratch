@@ -1,10 +1,32 @@
 {
-    "title": "student",
-    "description": "schema about students",
-    "type": "object",
-    "properties":{
-        "name":"string",
-        "age":"integer"
+  "title": "Review",
+  "description": "Schema for a smartphone review analysis",
+  "type": "object",
+  "properties": {
+    "key_themes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "The main themes discussed in the review."
     },
-    "required":["name"]
+    "summary": {
+      "type": "string",
+      "description": "A brief summary of the review."
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["POS", "NEG"],
+      "description": "The overall sentiment."
+    },
+    "pros": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "List of pros mentioned."
+    },
+    "cons": {
+      "type": ["array", "null"],
+      "items": { "type": "string" },
+      "description": "List of cons mentioned."
+    }
+  },
+  "required": ["key_themes", "summary", "sentiment"]
 }
